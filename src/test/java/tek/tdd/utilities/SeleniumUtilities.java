@@ -53,8 +53,8 @@ public class SeleniumUtilities extends BaseSetup {
        return waitForVisibility(element).getText();
     }
 
-    public void selectFromDropDown (WebElement element, String visibleText){
-        WebElement selectElement;
+    public void selectFromDropDown (WebElement element, String visibleText)
+    { WebElement selectElement=waitForVisibility(element);
     }
 
     public String getElementText(WebElement element){

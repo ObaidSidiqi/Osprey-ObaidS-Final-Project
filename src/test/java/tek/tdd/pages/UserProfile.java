@@ -30,6 +30,9 @@ public class UserProfile extends SeleniumUtilities {
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/a[2]")
     public WebElement planBtn;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/a[1]")
+    public WebElement accountBtn;
+
 
 
 

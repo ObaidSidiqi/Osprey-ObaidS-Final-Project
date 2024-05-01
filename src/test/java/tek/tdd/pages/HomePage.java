@@ -18,4 +18,6 @@ public class HomePage extends SeleniumUtilities {
     public WebElement createPrimaryAccount;
     @FindBy (css = "#root > div > div.css-175rvmj > div > a.chakra-button.css-ez23ye")
     public WebElement loginBtn;
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div/h2")
+    public WebElement createPrimaryAccountHolderTitle;
 }

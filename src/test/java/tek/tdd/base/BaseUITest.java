@@ -2,6 +2,7 @@ package tek.tdd.base;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import tek.tdd.pages.*;
 import tek.tdd.utilities.SeleniumUtilities;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.service.ExtentTestManager;
@@ -12,9 +13,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import tek.tdd.pages.CreatePrimaryAccountHolder;
-import tek.tdd.pages.HomePage;
-import tek.tdd.pages.LoginPage;
 import tek.tdd.utilities.SeleniumUtilities;
 
 import java.time.LocalDate;
@@ -24,6 +22,11 @@ public class BaseUITest extends SeleniumUtilities {
     public HomePage homePage;
     public CreatePrimaryAccountHolder createPrimaryAccountHolder;
     public LoginPage loginPage;
+    public AccountPage accountPage;
+
+    public UserProfile userProfile;
+    public PlanPage planPage;
+
 
 
 
@@ -33,6 +36,9 @@ public class BaseUITest extends SeleniumUtilities {
        homePage = new HomePage();
        createPrimaryAccountHolder = new CreatePrimaryAccountHolder();
        loginPage = new LoginPage();
+       accountPage= new AccountPage();
+       userProfile= new UserProfile();
+       planPage= new PlanPage();
 
     }
 

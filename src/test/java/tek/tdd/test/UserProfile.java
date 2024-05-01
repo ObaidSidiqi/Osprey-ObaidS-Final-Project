@@ -17,9 +17,6 @@ public class UserProfile extends BaseUITest {
     @Test
     public void validateInformationOnCustomerServiceLoginPage()
             throws InterruptedException{
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        tek.tdd.pages.LoginPage loginPage = new tek.tdd.pages.LoginPage();
-        tek.tdd.pages.UserProfile userProfile = new tek.tdd.pages.UserProfile();
 
         String fullName = "Supervisor";
         String userName = "supervisor";

@@ -19,19 +19,7 @@ public class Plans  extends BaseUITest {
     @Test
     public void validate4RowOfDataIsPresentInPlanPage()
     throws InterruptedException{
-
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        tek.tdd.pages.LoginPage loginPage = new tek.tdd.pages.LoginPage();
-        tek.tdd.pages.UserProfile userProfile = new tek.tdd.pages.UserProfile();
-        tek.tdd.pages.PlanPage planPage = new tek.tdd.pages.PlanPage();
-        String fullName = "Supervisor";
-        String userName = "supervisor";
-        String authorities = "admin";
-        String profileTxt = "Profile";
-        String todaysPricePlanText = "Today's Plans Price";
-
-
-
+ String todaysPricePlanText = "Today's Plans Price";
         waitForClickable(homePage.loginBtn).click();
         // ClickOnElement(homePage.loginBtn);
         waitForClickable(loginPage.userName).click();
@@ -63,20 +51,7 @@ public class Plans  extends BaseUITest {
     Then validate Create Date is todays date in (EST Time zone) and Date Expire is a day after (EST Time Zone)
      */
 
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        tek.tdd.pages.LoginPage loginPage = new tek.tdd.pages.LoginPage();
-        tek.tdd.pages.UserProfile userProfile = new tek.tdd.pages.UserProfile();
-        tek.tdd.pages.PlanPage planPage = new tek.tdd.pages.PlanPage();
-
-        String fullName = "Supervisor";
-        String userName = "supervisor";
-        String authorities = "admin";
-        String profileTxt = "Profile";
         String todaysPricePlanText = "Today's Plans Price";
-
-
-
-
         waitForClickable(homePage.loginBtn).click();
         // ClickOnElement(homePage.loginBtn);
         waitForClickable(loginPage.userName).click();

@@ -10,9 +10,6 @@ public class Login extends BaseUITest {
 
     @Test
     public void loginWithValidCredential() throws InterruptedException {
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        tek.tdd.pages.LoginPage loginPage = new tek.tdd.pages.LoginPage();
-
         ClickOnElement(homePage.loginBtn);
         waitForClickable(loginPage.userName);
         ClickOnElement(loginPage.userName);
@@ -29,8 +26,6 @@ public class Login extends BaseUITest {
 
     @Test
     public void loginWithWrongUserNameAndValidPassword()throws InterruptedException{
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        tek.tdd.pages.LoginPage loginPage = new tek.tdd.pages.LoginPage();
 
         Thread.sleep(2000);
         ClickOnElement(homePage.loginBtn);
@@ -53,8 +48,6 @@ public class Login extends BaseUITest {
     }
     @Test
     public void loginWithWrongPasswordAndValidUserName()throws InterruptedException{
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        tek.tdd.pages.LoginPage loginPage = new tek.tdd.pages.LoginPage();
         //Thread.sleep(500);
         ClickOnElement(homePage.loginBtn);
         //Thread.sleep(2000);

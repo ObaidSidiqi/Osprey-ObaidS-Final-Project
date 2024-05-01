@@ -14,7 +14,7 @@ import java.sql.Driver;
 public class CreateAccount extends BaseUITest {
     @Test
     public void TEKInsuranceAppLogo(){
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
+       // tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
         boolean isDispalyed = isElementDisplayed(homePage.topNavLogo);
 
         Assert.assertTrue(isDispalyed, "Top left corner Logo should display always ");
@@ -76,7 +76,6 @@ public class CreateAccount extends BaseUITest {
 
     @Test(dataProvider = "dataTest")
     public void CreatePrimaryAccountWithExistingEmailAndValidateErrorMessage(
-
             String email,
             String firstName,
             String lastName,
@@ -84,13 +83,9 @@ public class CreateAccount extends BaseUITest {
             String gender,
             String maritalStatus,
             String DateOfBirth
-
-
     ) throws InterruptedException {
 
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        tek.tdd.pages.CreatePrimaryAccountHolder createPrimaryAccountHolder  = new tek.tdd.pages.CreatePrimaryAccountHolder();
-        /*
+       /*
       Create account with existing email address and validate error message as expected
          */
         ClickOnElement(homePage.createPrimaryAccount);

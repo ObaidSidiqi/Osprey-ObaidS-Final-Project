@@ -68,37 +68,15 @@ public class Plans  extends BaseUITest {
         String actualExpDateOnThePage = getElementText(planPage.dateExpiredOfMotorcycle);
 
 
-
-        String expDateOnThePage = "May 1, 2024";
-        String expDateForTmr = "May 2, 2024";
-
-       // String formattedDateOfTmrw = "May 2, 2024";
-
-
-        System.out.println(actualDateOnThePage);
-        System.out.println(actualExpDateOnThePage);
-        Assert.assertEquals(actualDateOnThePage,expDateOnThePage);
-
-        Assert.assertEquals(actualExpDateOnThePage,expDateForTmr);
-
-/*
-
         LocalDate today = LocalDate.now(ZoneId.of("America/New_York"));
         // Define the date format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
         // Formating the date using the defined formatter
         String formattedDate = today.format(formatter);
-
-        System.out.println(formattedDate);
-
         LocalDate tomorrow = today.plusDays(1);
         String formattedDateOfTmrw = tomorrow.format(formatter);
-
-
-
-        Assert.assertEquals(dateOnThePage,formattedDate);
-        Assert.assertEquals(expDateOnThePage,formattedDateOfTmrw);
-*/
+        Assert.assertEquals(actualDateOnThePage,formattedDate);
+        Assert.assertEquals(actualExpDateOnThePage,formattedDateOfTmrw);
     }
 
 

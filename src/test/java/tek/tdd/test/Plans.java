@@ -6,6 +6,7 @@ import tek.tdd.base.BaseUITest;
 import tek.tdd.pages.PlanPage;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class Plans  extends BaseUITest {
@@ -71,15 +72,17 @@ public class Plans  extends BaseUITest {
         String expDateOnThePage = getElementText(planPage.dateExpiredOfMotorcycle);
 
 
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now(ZoneId.of("America/New_York"));
         // Define the date format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
         // Formating the date using the defined formatter
         String formattedDate = today.format(formatter);
 
         System.out.println(formattedDate);
+        
 
-       LocalDate tomorrow = today.plusDays(1);
+
+        LocalDate tomorrow = today.plusDays(1);
         String formattedDateOfTmrw = tomorrow.format(formatter);
 
         System.out.println(formattedDateOfTmrw);

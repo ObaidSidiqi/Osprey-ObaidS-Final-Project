@@ -23,7 +23,6 @@ public class BaseUITest extends SeleniumUtilities {
     public CreatePrimaryAccountHolder createPrimaryAccountHolder;
     public LoginPage loginPage;
     public AccountPage accountPage;
-
     public UserProfile userProfile;
     public PlanPage planPage;
 

@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tek.tdd.base.BaseUITest;
 import tek.tdd.pages.CreatePrimaryAccountHolder;
+import tek.tdd.utilities.DataGen;
 
 import java.sql.Driver;
 
@@ -15,35 +16,28 @@ public class CreateAccount extends BaseUITest {
     @Test
     public void TEKInsuranceAppLogo(){
        // tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
-        boolean isDispalyed = isElementDisplayed(homePage.topNavLogo);
+        boolean isDisplayed = isElementDisplayed(homePage.topNavLogo);
 
-        Assert.assertTrue(isDispalyed, "Top left corner Logo should display always ");
+        Assert.assertTrue(isDisplayed, "Top left corner Logo should display always ");
     }
 
     @Test
     public void ValidateCreatePrimaryAccountHolderButton(){
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
+
         // Navigate to TEK Insurance App and Validate " Create Primary Account Button"
 
         boolean isCreatePrimaryAccountEnabled = isElementEnabled(homePage.createPrimaryAccount);
         Assert.assertTrue(isCreatePrimaryAccountEnabled, "Create Primary Account Button is not Enable in Home Page");
     }
 
-    @DataProvider(name = "dataTest")
-    private String[][] dataTest(){
-        String[][] data = {
-                {"AlexJames1@gmail.com","ALex","James","Mr.","Male","single","01/01/1999"},
-                {"AlexJames2@gmail.com","ALex","James","Mr.","Male","single","01/01/1999"}
-        };
-        return data;
-    };
+
 
     @Test
     public void ValidateCreatePrimaryAccountHolderPage() throws InterruptedException {
-        tek.tdd.pages.HomePage homePage = new tek.tdd.pages.HomePage();
+
 
         String name = "alex";
-        String Email = "AlexFLJ@gmail.com";
+        String Email = DataGen.randomEmail();
         String EmailAddFromSignUpPageForValidation;
 
         /*
@@ -52,27 +46,32 @@ public class CreateAccount extends BaseUITest {
          */
         ClickOnElement(homePage.createPrimaryAccount);
         Thread.sleep(500);
-        tek.tdd.pages.CreatePrimaryAccountHolder createPrimaryAccountHolder  = new tek.tdd.pages.CreatePrimaryAccountHolder();
         sendText(createPrimaryAccountHolder.EmailAddress,Email);
         sendText(createPrimaryAccountHolder.FirstName,name);
         sendText(createPrimaryAccountHolder.LastName, "James");
         selectDropdownByVisibleText(By.cssSelector("#title"),"Mr.");
         selectDropdownByVisibleText(By.cssSelector("#gender"),"Male");
         selectDropdownByVisibleText(By.cssSelector("#maritalStatus"),"Single");
-        sendText(createPrimaryAccountHolder.DateOfBirth, "01/01/1999");
+        Thread.sleep(1000);
+        waitForClickable(createPrimaryAccountHolder.DateOfBirth).sendKeys("11/11/1999");
+      //  sendText(createPrimaryAccountHolder.DateOfBirth, "11/11/1999");
+        //sendText(createPrimaryAccountHolder.DateOfBirth, "11/11/1999");
         ClickOnElement(createPrimaryAccountHolder.CreateAccountButton);
         Thread.sleep(500);
 
-       // boolean isSignUpSuccessfull = isElementDisplayed(createPrimaryAccountHolder.SignUpYourAccount);
         String emailFrom2ndPage = getElementText(createPrimaryAccountHolder.EmailAddressDisplayedIn2ndPage);
         Assert.assertEquals(emailFrom2ndPage,Email);
-
-
-
-        //Assert.assertTrue(isSignUpSuccessfull, "Create Primary Account Button is not Enable in Home Page");
-
+        System.out.println(Email);
 
     }
+    @DataProvider(name = "dataTest")
+    private String[][] dataTest(){
+        String[][] data = {
+                {"AlexJames1@gmail.com","ALex","James","Mr.","Male","Single","01/01/1999"},
+                {"AlexJames2@gmail.com","ALex","James","Mr.","Male","Single","01/01/1999"}
+        };
+        return data;
+    };
 
     @Test(dataProvider = "dataTest")
     public void CreatePrimaryAccountWithExistingEmailAndValidateErrorMessage(

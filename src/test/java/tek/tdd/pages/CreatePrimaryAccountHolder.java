@@ -29,7 +29,8 @@ public class CreatePrimaryAccountHolder extends SeleniumUtilities {
     @FindBy(xpath = "//*[@id=\"lastName\"]")
     public WebElement LastName;
 
-    @FindBy(css = "#dateOfBirth")
+
+    @FindBy(xpath = "  //*[@id=\"dateOfBirth\"]")
     public WebElement DateOfBirth;
 
 

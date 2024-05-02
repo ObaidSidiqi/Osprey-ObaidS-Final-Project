@@ -64,8 +64,8 @@ public class Plans  extends BaseUITest {
         String actualTodaysPricePlanText = getElementText(planPage.todaysPlanPriceTxt);
         Assert.assertEquals(todaysPricePlanText, actualTodaysPricePlanText);
 
-        String dateOnThePage = getElementText(planPage.dateCreatedOfMotorcycle);
-        //String expDateOnThePage = getElementText(planPage.dateExpiredOfMotorcycle);
+        String actualDateOnThePage = getElementText(planPage.dateCreatedOfMotorcycle);
+        String actualExpDateOnThePage = getElementText(planPage.dateExpiredOfMotorcycle);
 
 
 
@@ -76,8 +76,9 @@ public class Plans  extends BaseUITest {
 
 
 
-        Assert.assertEquals(dateOnThePage,expDateForTmr);
-        Assert.assertEquals(expDateOnThePage,dateOnThePage);
+        Assert.assertEquals(actualDateOnThePage,expDateOnThePage);
+
+        Assert.assertEquals(actualExpDateOnThePage,expDateForTmr);
 
 /*
 

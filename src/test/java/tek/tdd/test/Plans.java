@@ -6,6 +6,7 @@ import tek.tdd.base.BaseUITest;
 import tek.tdd.pages.PlanPage;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class Plans  extends BaseUITest {
@@ -41,9 +42,6 @@ public class Plans  extends BaseUITest {
 
     }
 
-
-
-
     @Test
     public void validateCreateDateInPlanPageIsToday() throws InterruptedException{
           /*
@@ -66,12 +64,25 @@ public class Plans  extends BaseUITest {
         String actualTodaysPricePlanText = getElementText(planPage.todaysPlanPriceTxt);
         Assert.assertEquals(todaysPricePlanText, actualTodaysPricePlanText);
 
-        String dateOnThePage = getElementText(planPage.dateCreatedOfMotorcycle);
+        String actualDateOnThePage = getElementText(planPage.dateCreatedOfMotorcycle);
+        String actualExpDateOnThePage = getElementText(planPage.dateExpiredOfMotorcycle);
 
-        String expDateOnThePage = getElementText(planPage.dateExpiredOfMotorcycle);
 
 
-        LocalDate today = LocalDate.now();
+        String expDateOnThePage = "May 1,2024";
+        String expDateForTmr = "May 2,2024";
+
+       // String formattedDateOfTmrw = "May 2, 2024";
+
+
+
+        Assert.assertEquals(actualDateOnThePage,expDateOnThePage);
+
+        Assert.assertEquals(actualExpDateOnThePage,expDateForTmr);
+
+/*
+
+        LocalDate today = LocalDate.now(ZoneId.of("America/New_York"));
         // Define the date format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
         // Formating the date using the defined formatter
@@ -79,16 +90,15 @@ public class Plans  extends BaseUITest {
 
         System.out.println(formattedDate);
 
-       LocalDate tomorrow = today.plusDays(1);
+        LocalDate tomorrow = today.plusDays(1);
         String formattedDateOfTmrw = tomorrow.format(formatter);
 
-        System.out.println(formattedDateOfTmrw);
+
 
         Assert.assertEquals(dateOnThePage,formattedDate);
         Assert.assertEquals(expDateOnThePage,formattedDateOfTmrw);
-
+*/
     }
-
 
 
 

@@ -18,9 +18,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 
 public class BaseSetup {
-    public static final Logger LOGGER = LogManager.getLogger(BaseSetup.class);
-private static WebDriver driver;
-private Properties properties;
+    private static final Logger LOGGER = LogManager.getLogger(BaseSetup.class);
+
+
+    private static WebDriver driver;
+
+    private Properties properties;
 
 //Read Property File In Constructor of BaseSetup Class.
     public BaseSetup(){

@@ -69,13 +69,14 @@ public class Plans  extends BaseUITest {
 
 
 
-        String expDateOnThePage = "May 1,2024";
-        String expDateForTmr = "May 2,2024";
+        String expDateOnThePage = "May 1, 2024";
+        String expDateForTmr = "May 2, 2024";
 
        // String formattedDateOfTmrw = "May 2, 2024";
 
 
-
+        System.out.println(actualDateOnThePage);
+        System.out.println(actualExpDateOnThePage);
         Assert.assertEquals(actualDateOnThePage,expDateOnThePage);
 
         Assert.assertEquals(actualExpDateOnThePage,expDateForTmr);

@@ -90,8 +90,6 @@ public class Plans  extends BaseUITest {
 
         System.out.println(formattedDate);
 
-
-
         LocalDate tomorrow = today.plusDays(1);
         String formattedDateOfTmrw = tomorrow.format(formatter);
 
